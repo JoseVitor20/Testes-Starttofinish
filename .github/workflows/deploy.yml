@@ -1,4 +1,4 @@
-name: Deploy Laravel sem /public via FTP e SSH
+name: Deploy Laravel via FTP e SSH
 
 on:
   push:
