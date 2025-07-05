@@ -17,7 +17,6 @@ jobs:
       - name: 🔍 Validar variáveis de ambiente
         run: |
           [ -z "${{ secrets.SSH_HOST }}" ] && echo "🚨 SSH_HOST não definido" && exit 1
-          [ -z "${{ secrets.FTP_SERVER }}" ] && echo "🚨 FTP_SERVER não definido" && exit 1
           [ -z "${{ secrets.FTP_USER }}" ] && echo "🚨 FTP_USER não definido" && exit 1
           [ -z "${{ secrets.FTP_PASSWORD }}" ] && echo "🚨 FTP_PASSWORD não definido" && exit 1
           [ -z "${{ secrets.SSH_USER }}" ] && echo "🚨 SSH_USER não definido" && exit 1
@@ -50,7 +49,7 @@ jobs:
       - name: 🚀 Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
