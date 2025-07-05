@@ -29,7 +29,7 @@ jobs:
 
       - name: 📦 Instalar dependências do Node e gerar build do Vite
         run: |
-          npm ci
+          npm install
           npm run build
 
       - name: 🔑 Gerar key do Laravel
